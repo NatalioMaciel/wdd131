@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    padding: 0;
+    margin: 0 auto;
+    display: grid;
+    max-width: 900px;
+}
+
+
+/* Mobile View ***************/
+
+#menu {
+	display: block;
+	font-size: 2rem;
+	font-weight:700;
+	text-decoration: none;
+	padding: .5rem .75rem;
+	background-color: #eee;
+	color: #000;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+#menu::before {
+	content: "≡";
+}
+
+nav {
+	background-color: #36454f;
+}
+.navigation {
+	list-style: none;
+	margin: 0 auto;
+	max-width: 760px;
+}
+
+.navigation li {
+	display: none;
+}
+.navigation a {
+	display: block;
+	padding: 0.75rem;
+	text-align: center;
+	text-decoration: none;
+	color: black;
+	font-weight: 700;
+	transition: 0.5s;
+	font-size: clamp(1rem, 2vmin, 1.5rem);
+}
+
+.navigation a:hover, navigation a:active {
+	color: white;
+	background-color: black;
+}
+
+.show li {
+	display: block;
+}
+
+#menu.show::before {
+	content: "X";
+}
+
+h1 {
+    font-weight: 100;
+    font-size: 2rem;
+    text-align: left;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 100;
+    border-bottom: 1px solid #443850;
+    text-align: center;
+    margin: 0 auto;
+    width: 90%;
+}
+
+header {
+    background-color: #bbb;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+ /* 
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #36454f;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+nav a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+*/
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+    max-width: 900px;
+    margin: 0;
+}
+
+figcaption {
+    background-color: #e5dcc5;
+    color: #4C4C47;
+    height: 2.5em;
+    font: italic smaller sans-serif;
+    padding: 1em;
+    text-align: center;
+    border-radius: 10px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 1rem auto 0;
+    border-top: 1px solid #443850;
+    font-size: 0.8rem;
+    background-color: #bbb;
+}
+
+
+
+/* class */
+.figure {
+    border: none;
+    display: flex;
+    flex-flow: column;
+    gap: 15px;
+    padding: 1em;
+    margin: auto;
+}
+
+.figure__img {
+    max-width: 400px;
+    max-height: 300px;
+    border-radius: 10px;
+}
