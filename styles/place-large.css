@@ -96,6 +96,7 @@
         grid-column: 4 / 5;
     }
 
+
     .weather-widget h2,
     .location-info h2 {
         background-color: rgb(98, 128, 98);
@@ -103,8 +104,12 @@
         margin-bottom: 15px;
         border-radius: 5px;
         font-size: 1.5rem;
-        text-align: left;
+        text-align: center;
         display: flex;
+    }
+
+    .location-info h2::after {
+        content: "📄";
     }
 
     .weather-widget p,
