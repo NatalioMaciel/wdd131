@@ -1,3 +1,8 @@
+:root {
+    --backcolor: #bbb;
+    --bord: 1px solid #443850;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +23,7 @@ body {
 /* Mobile View ***************/
 
 header {
-    background-color: #bbb;
+    background-color: var(--backcolor);
     text-align: center;
     padding: 20px;
     color: rgb(41, 39, 39);
@@ -37,7 +42,7 @@ h1 {
 h2 {
     font-size: 1.5rem;
     font-weight: 100;
-    border-bottom: 1px solid #443850;
+    border-bottom: var(--bord);
     text-align: center;
     margin: 0 auto;
     width: 90%;
@@ -79,6 +84,7 @@ main {
     padding: 20px;
     width: 100%;
     border-radius: 10px;
+    border: var(border);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -119,6 +125,6 @@ footer {
     margin: 1rem auto 0;
     border-top: 1px solid #443850;
     font-size: 0.8rem;
-    background-color: #bbb;
+    background-color: var(--backcolor);
     grid-row: 3 / 4;
 }

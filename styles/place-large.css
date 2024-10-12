@@ -1,3 +1,8 @@
+:root {
+    --backcolor: #bbb;
+    --bord: 1px solid #443850;
+}
+
 @media only screen and (min-width: 1000px) {
     * {
         margin: 0;
@@ -17,10 +22,10 @@
     }
 
     header {
-        background-color: #bbb;
+        background-color: var(--backcolor);
         text-align: center;
         padding: 20px;
-        color: white;
+        color: black;
         font-size: 2.5em;
         font-weight: bold;
         position: relative;
@@ -36,7 +41,7 @@
     h2 {
         font-size: 1.5rem;
         font-weight: 100;
-        border-bottom: 1px solid #443850;
+        border-bottom: var(--bord);
         text-align: center;
         margin: 0 auto;
         width: 90%;
@@ -116,7 +121,7 @@
         margin: 1rem auto 0;
         border-top: 1px solid #443850;
         font-size: 0.8rem;
-        background-color: #bbb;
+        background-color: var(--backcolor);
         border-top: 5px solid rgb(98, 128, 98);
     }
 }
