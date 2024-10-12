@@ -18,11 +18,14 @@ function displayWindChill() {
 
 
 function checkWidth() {
+    const icon = document.getElementById('icon');
     const weatherimage = document.getElementById('weather-image');
 
     if (window.innerWidth < 1000) {
+        icon.style.display = 'none';
         weatherimage.style.display = 'block';
     } else {
+        icon.style.display = 'block';
         weatherimage.style.display = 'none';
     }
 }
@@ -47,3 +50,4 @@ window.onload = displayWindChill;
     displayCopyright();
     displayLastModified();
     checkWidth();
+

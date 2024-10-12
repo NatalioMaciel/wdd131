@@ -71,7 +71,7 @@
         /* Semi-transparent background */
         color: #bbb;
         padding: 20px;
-        width: 200px;
+        width: 220px;
         height: 300px;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -99,10 +99,7 @@
         border-radius: 5px;
         font-size: 1.5rem;
         text-align: left;
-    }
-
-    .weather-widget h2::after {
-        content: "⛅";
+        display: flex;
     }
 
     .weather-widget p,
