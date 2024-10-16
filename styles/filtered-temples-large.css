@@ -1,0 +1,126 @@
+
+@media only screen and (min-width: 880px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        padding: 0;
+        margin: 0 auto;
+        display: grid;
+        max-width: 900px;
+    }
+
+
+	.navigation {
+		display: flex;
+	}
+	.navigation li {
+		display: block; /* change state in small view */
+		flex: 1 1 100%;
+        color:#fff;
+	}
+	.navigation a {
+		text-align: center;
+	}
+	#menu {
+		display: none;
+	}
+
+    .temples-grid {
+        border: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 20px;
+        padding: 1em;
+        margin: auto;
+    }
+    
+    .temples-grid img {
+        max-width: 400px;
+        max-height: 250px;
+        border-radius: 10px;
+    }
+
+    .label {
+        text-align: center;
+        font-size: 1rem;
+    }
+    
+    h1 {
+        font-weight: 100;
+        font-size: 2rem;
+        text-align: left;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 100;
+        border-bottom: 1px solid #443850;
+        text-align: center;
+        margin: 0 auto;
+        width: 90%;
+    }
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        background-color: #bbb;
+        padding: 20px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    nav {
+        align-self: flex-end;
+        background-color: #36454f;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+    
+    nav a {
+        display: block;
+        color: #fff;
+        text-align: center;
+        padding: 1rem;
+        text-decoration: none;
+    }
+    
+    nav a:hover {
+        text-decoration: underline;
+    }
+    
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 1rem;
+        max-width: 900px;
+        margin: 0;
+    }
+    
+    figcaption {
+        background-color: #e5dcc5;
+        color: #4C4C47;
+        height: 2.5em;
+        font: italic smaller sans-serif;
+        padding: 1em;
+        text-align: center;
+        border-radius: 10px;
+    }
+    
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 1rem auto 0;
+        border-top: 1px solid #443850;
+        font-size: 0.8rem;
+        background-color: #bbb;
+    }
+    
+}
