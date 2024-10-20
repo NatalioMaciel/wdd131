@@ -1,0 +1,39 @@
+:root {
+    --background-color: #F4C3C2; /* Tea Rose */
+    --header-background: #3581B8; /* Steel Blue */
+    --text-color: #333; /* Dark gray text */
+    --footer-background: #F4C3C2; /* Tea Rose footer */
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: "Sniglet", system-ui;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--header-background);
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+header h1, h2, h3 {
+    margin: 0;
+    font-family: "Playwrite GB S", cursive;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: var(--footer-background);
+    padding: 10px;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 0.875rem; /* Use rem for consistency */
+}
