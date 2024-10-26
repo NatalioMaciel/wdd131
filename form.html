@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <meta name="description" content="">
+    <meta name="author" content="Natalio Maciel">
+    <link rel="stylesheet" href="styles/form.css">
+    <script defer src="scripts/form.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Product Review</h1>
+    </header>
+
+    <main>
+        <form method="get" action="review.html" class="wf1">
+            <select name="product" id="productReview" required>
+                <option value="" aria-disabled="true">Select a product</option>
+            </select>
+
+            <fieldset>
+                <div>Overall Rating</div>
+                <input type="radio" id="onestar" name="stars" value="1" required>☆
+                <input type="radio" id="twostar" name="stars" value="2" required>☆☆
+                <input type="radio" id="threestar" name="stars" value="3" required>☆☆☆
+                <input type="radio" id="fourstar" name="stars" value="4" required>☆☆☆☆
+                <input type="radio" id="fivestar" name="stars" value="5" required>☆☆☆☆☆
+                </div>
+
+                <label>Date of instalation<input type="date" id="date" name="instalationDate"></label>
+
+                <div>Which features did you find useful in the product?
+                    (Check all that apply)</div>
+                <label><input type="checkbox" id="durability" name="durability" value="yes">Durability</label>
+                <label><input type="checkbox" id="useful" name="useful" value="yes">Ease of Use</label>
+                <label><input type="checkbox" id="performance" name="performance" value="yes">Performance</label>
+                <label><input type="checkbox" id="design" name="design" value="yes">Design</label>
+                </div>
+
+                <label>Write Review(optional)</textarea></label>
+                <textarea name="writingReview" id="writing"></textarea>
+
+                <label>Your Name (optional)<input type="text" id="fullname" name="name"></label>
+
+            </fieldset>
+
+
+            <input type="submit" value="Rating the product">
+        </form>
+    </main>
+    <footer>
+        <p id="copyright"></p>
+        <p id="last-modified"></p>
+    </footer>
+</body>
+
+</html>
