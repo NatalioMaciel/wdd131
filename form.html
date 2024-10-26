@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
+    <title>Product Review</title>
     <meta name="description" content="">
     <meta name="author" content="Natalio Maciel">
     <link rel="stylesheet" href="styles/form.css">
@@ -30,9 +30,8 @@
                 <input type="radio" id="threestar" name="stars" value="3" required>☆☆☆
                 <input type="radio" id="fourstar" name="stars" value="4" required>☆☆☆☆
                 <input type="radio" id="fivestar" name="stars" value="5" required>☆☆☆☆☆
-                </div>
 
-                <label>Date of instalation<input type="date" id="date" name="instalationDate"></label>
+                <label>Date of instalation<input type="date" id="date" name="instalationDate" required></label>
 
                 <div>Which features did you find useful in the product?
                     (Check all that apply)</div>
@@ -40,9 +39,8 @@
                 <label><input type="checkbox" id="useful" name="useful" value="yes">Ease of Use</label>
                 <label><input type="checkbox" id="performance" name="performance" value="yes">Performance</label>
                 <label><input type="checkbox" id="design" name="design" value="yes">Design</label>
-                </div>
 
-                <label>Write Review(optional)</textarea></label>
+                <label>Write Review(optional)</label>
                 <textarea name="writingReview" id="writing"></textarea>
 
                 <label>Your Name (optional)<input type="text" id="fullname" name="name"></label>
