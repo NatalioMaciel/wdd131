@@ -13,38 +13,38 @@ header {
 }
 
 
-.wf1 fieldset{
+.rf1 fieldset{
     margin: 2rem 0;
     border: 1px solid #ddd;
     border-radius: 6px;
     padding: .5rem 2%;
 }
 
-.wf1 legend {
+.rf1 legend {
     color: #445ba9;
     padding: 0 .5rem;
 }
 
-.wf1 label {
+.rf1 label {
     padding-top: 1rem;
     display: block;
     color: #9c2c13;
     font-size: .9rem;
 }
 
-.wf1 div {
+.rf1 div {
     padding-top: 1rem;
     color: #445ba9;
     font-size: .9rem;
 }
 
-.wf1 input[type="text"],
-.wf1 input[type="tel"],
-.wf1 input[type="email"],
-.wf1 input[type="url"],
-.wf1 input[type="date"],
-.wf1 select,
-.wf1 input[type="number"]
+.rf1 input[type="text"],
+.rf1 input[type="tel"],
+.rf1 input[type="email"],
+.rf1 input[type="url"],
+.rf1 input[type="date"],
+.rf1 select,
+.rf1 input[type="number"]
 {
     background-color: #eee;
     display: block;
@@ -56,17 +56,17 @@ header {
     max-width: 400px;
 }
 
-.wf1 select{
+.rf1 select{
     width: 100%;
     margin: 2rem auto 0;
 }
 
-.wf1 input[type="radio"],
-.wf1 input[type="checkbox"]{
+.rf1 input[type="radio"],
+.rf1 input[type="checkbox"]{
     margin-right: 6px;
 }
 
-.wf1 input[type="submit"]{
+.rf1 input[type="submit"]{
     border: none;
     background-image: linear-gradient(#9c3c13, #6f200e);
     color: #fff;
@@ -78,16 +78,16 @@ header {
     box-shadow: 1px 1px 4px #999;
 }
 
-.wf1 textarea {
+.rf1 textarea {
     width: 375px;
     height: 150px;
 }
 
-.wf1 input:required {
+.rf1 input:required {
     border-right: solid 8px red;
 }
 
-.wf1 input:required:valid {
+.rf1 input:required:valid {
     border-right: solid 8px green;
 }
 
