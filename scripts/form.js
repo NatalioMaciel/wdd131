@@ -45,8 +45,12 @@ function displayLastModified() {
     document.getElementById('last-modified').textContent = `Last modification: ${lastModified}`;
 };
 
-const visitsReview = document.querySelector(".reviewCounter")
-let numReviews = Number(window.localStorage.getItem("numReviews")) || 0;
+
+
+
+/*
+const visitsReview = document.getElementById(".reviewCounter")
+let numReviews = localStorage.getItem(JSON.parse("numReviews")) || 0;
 
 reviewForm.addEventListener("submit", (event) => {
     if (numReviews !== 0) {
@@ -55,10 +59,11 @@ reviewForm.addEventListener("submit", (event) => {
         visitsReview.textContent = `1`;
     }
     numReviews++;
-    localStorage.setItem("numReviews", numReviews);
-});
+    localStorage.setItem("numReviews", JSON.stringify(numReviews));
+    console.log(numReviews);
+});*/
 
-window.onload =
-    displayCopyright(),
-    displayLastModified()
-    ;
+window.onload = () => {
+    displayCopyright();
+    displayLastModified();
+};

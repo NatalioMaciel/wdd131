@@ -20,8 +20,23 @@
     <main>
         <p>Thank you for reviwing this product</p>
 
-        <p>Number of Reviews:<span class="reviewCounter"></span></p>
+        <p>Number of Reviews:<span class="reviewCounter">0</span></p>
 
+        <script>
+            const reviewsDisplay = document.querySelector(".reviewCounter");
+
+            let numReviews = Number(window.localStorage.getItem("numReviewsProduct")) || 0;
+
+            const reviewForm = document.getElementById(".reviewForm");
+
+            if (numReviews !== 0) {
+                reviewsDisplay.textContent = numReviews;
+            } else {
+                reviewsDisplay.textContent = `This is your first visit. 🥳 Welcome!`;
+            }
+            numReviews++;
+            localStorage.setItem("numReviewsProduct", numReviews);
+        </script>
     </main>
     <footer>
         <p id="copyright"></p>
