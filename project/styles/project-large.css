@@ -53,21 +53,15 @@
         border-radius: 10px;
     }
 
-    .label {
-        text-align: center;
-        font-size: 1rem;
-    }
-
     .search_input input[type="text"]{
         background-color: #eee;
         display: block;
         border: 1px solid #999;
         border-radius: 6px;
-        padding: .75rem;
+        padding: .55rem;
         color: #555;
-        width: 93%;
-        max-width: 550px;
-    }
+        width: 100%;
+        margin: 25px auto;    }
 
     h1 {
         font-weight: 100;
