@@ -7,4 +7,17 @@ hambutton.addEventListener('click', () => {
     hambutton.classList.toggle('show');
 });
 
+function displayCopyright() {
+    const currentYear = new Date().getFullYear();
+    document.getElementById('copyright').textContent = `© ${currentYear} 🎨 Good Arte - Handmade products 🎨 Luque, Paraguay`;
+}
 
+function displayLastModified() {
+    const lastModified = document.lastModified;
+    document.getElementById('last-modified').textContent = `Last modification: ${lastModified}`;
+}
+
+window.onload = () => {
+    displayCopyright();
+    displayLastModified();
+};

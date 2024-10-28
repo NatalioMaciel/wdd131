@@ -45,24 +45,6 @@ function displayLastModified() {
     document.getElementById('last-modified').textContent = `Last modification: ${lastModified}`;
 };
 
-
-
-
-/*
-const visitsReview = document.getElementById(".reviewCounter")
-let numReviews = localStorage.getItem(JSON.parse("numReviews")) || 0;
-
-reviewForm.addEventListener("submit", (event) => {
-    if (numReviews !== 0) {
-        visitsReview.textContent = numReviews;
-    } else {
-        visitsReview.textContent = `1`;
-    }
-    numReviews++;
-    localStorage.setItem("numReviews", JSON.stringify(numReviews));
-    console.log(numReviews);
-});*/
-
 window.onload = () => {
     displayCopyright();
     displayLastModified();

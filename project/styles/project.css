@@ -1,15 +1,17 @@
 :root {
-    --background-color: #F4C3C2; /* Tea Rose */
-    --header-background: #3581B8; /* Steel Blue */
-    --link-color: #0d2435; /* Steel Blue links */
-    --text-color: #333; /* Dark gray text */
-    --footer-background: #F4C3C2; /* Tea Rose footer */
+    --background-color: white;/* Tea Rose */
+    --header-background: #3581B8;/* Steel Blue */
+    --link-color: #0d2435;/* Steel Blue links */
+    --text-color: #333;/* Dark gray text */
+    --footer-background: #F4C3C2;/* Tea Rose footer */
 }
 
 
 body {
-    background-color: white;
+    background-color: var(--background-color);
     font-family: "Sniglet", serif;
+    display: grid;
+    max-width: 699px;
     margin: 0;
     padding: 0;
     color: var(--text-color);
@@ -28,7 +30,7 @@ body {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    
+
 }
 
 #menu::before {
@@ -37,12 +39,6 @@ body {
 
 nav {
     background-color: var(--header-background);
-}
-
-.navigation {
-    list-style: none;
-    margin: 0 auto;
-    max-width: 700px;
 }
 
 .navigation li {
@@ -72,6 +68,24 @@ nav {
 
 #menu.show::before {
     content: "X";
+}
+
+.search_input input[type="text"]{
+    background-color: #eee;
+    display: block;
+    border: 1px solid #999;
+    border-radius: 6px;
+    padding: .75rem;
+    color: #555;
+    width: 93%;
+    max-width: 550px;
+}
+
+.search_input label {
+    padding-top: 1rem;
+    display: block;
+    color: #9c2c13;
+    font-size: .9rem;
 }
 
 .temples-grid {
@@ -121,7 +135,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     padding: 0 1rem;
-    max-width: 900px;
+    max-width: 100%;
     margin: 0;
 }
 
@@ -143,5 +157,6 @@ footer {
     margin: 1rem auto 0;
     border-top: 1px solid #443850;
     font-size: 0.8rem;
+    font-family: "Playwrite GB S", serif;
     background-color: var(--footer-background);
 }

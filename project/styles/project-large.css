@@ -1,22 +1,17 @@
 @media only screen and (min-width: 700px) {
     :root {
-        --background-color: #F4C3C2; /* Tea Rose */
+        --background-color: white; /* Tea Rose */
         --header-background: #3581B8; /* Steel Blue */
         --link-color: #0d2435; /* Steel Blue links */
         --text-color: #333; /* Dark gray text */
         --footer-background: #F4C3C2; /* Tea Rose footer */
     }
     
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
     body {
         background-color: white;
         font-family: "Sniglet", serif;
-        max-width: 1000px;
+        width: 100%;
+        max-width: 1280px;
         margin: 0;
         padding: 0;
         color: var(--text-color);
@@ -30,7 +25,7 @@
 
     .navigation li {
         display: block;
-        flex: 1 1 100%;
+        flex: 1 1 1;
         color: white;
     }
 
@@ -61,6 +56,17 @@
     .label {
         text-align: center;
         font-size: 1rem;
+    }
+
+    .search_input input[type="text"]{
+        background-color: #eee;
+        display: block;
+        border: 1px solid #999;
+        border-radius: 6px;
+        padding: .75rem;
+        color: #555;
+        width: 93%;
+        max-width: 550px;
     }
 
     h1 {
@@ -94,7 +100,7 @@
     }
 
     nav {
-        align-self: flex-end;
+        align-self: center;
         background-color: var(--header-background);
         color: var(--text-color);
         margin: 0 auto;
@@ -141,5 +147,5 @@
         font-size: 0.8rem;
         background-color: #bbb;
     }
-
+    
 }
