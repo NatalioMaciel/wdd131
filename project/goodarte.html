@@ -23,24 +23,30 @@
         <a id="menu" href="#"></a>
         <nav class="nav">
             <ul class="navigation">
-                <li><a id="home" href="#">Home</a></li>
-                <li><a id="product" href="#">Products</a></li>
+                <li><a id="home" href="goodarte.html">Home</a></li>
+                <li><a id="product" href="products.html">Products</a></li>
                 <li><a id="order" href="#">Order</a></li>
-                <li><a id="contactus" href="#">Contact Us</a></li>
+                <li><a id="contactus" href="contactUs.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <div class="slider">
-            <ul>
-               
-            </ul>
-        </div>
+        <picture class="banner">
+            <source srcset="images/key_chain_2.webp" media="(min-width: 700px)">
+            <source srcset="images/banner1.webp" media="(max-width: 699px)">
+            <img src="images/banner1.webp" alt="hero image">
+        </picture>
+
         <form action="" class="search_input">
-            <input type="text" id="search" name="searchProduct" placeholder="search"/>
+            <input type="text" id="search" name="searchProduct" placeholder="🔍search" />
         </form>
-        
+
+        <h2>Products</h2>
+        <div class="products-grid">
+        </div>
+
     </main>
+
     <footer>
         <p id="copyright"></p>
         <p id="last-modified"></p>

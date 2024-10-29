@@ -1,18 +1,23 @@
 @media only screen and (min-width: 700px) {
     :root {
-        --background-color: white; /* Tea Rose */
-        --header-background: #3581B8; /* Steel Blue */
-        --link-color: #0d2435; /* Steel Blue links */
-        --text-color: #333; /* Dark gray text */
-        --footer-background: #F4C3C2; /* Tea Rose footer */
+        --background-color: white;
+        /* Tea Rose */
+        --header-background: #3581B8;
+        /* Steel Blue */
+        --link-color: #0d2435;
+        /* Steel Blue links */
+        --text-color: #333;
+        /* Dark gray text */
+        --footer-background: #F4C3C2;
+        /* Tea Rose footer */
     }
-    
+
     body {
         background-color: white;
         font-family: "Sniglet", serif;
         width: 100%;
-        max-width: 1280px;
-        margin: 0;
+        max-width: 1000px;
+        margin: 0 auto;
         padding: 0;
         color: var(--text-color);
         display: grid;
@@ -37,31 +42,96 @@
         display: none;
     }
 
-    .temples-grid {
+    .products-grid {
         border: none;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         align-items: center;
         gap: 20px;
         padding: 1em;
         margin: auto;
     }
 
-    .temples-grid img {
-        max-width: 400px;
-        max-height: 250px;
+    .products-grid img {
+        max-width: 350px;
+        max-height: 400px;
         border-radius: 10px;
     }
 
-    .search_input input[type="text"]{
+    .search_input input[type="text"] {
         background-color: #eee;
-        display: block;
         border: 1px solid #999;
         border-radius: 6px;
         padding: .55rem;
         color: #555;
+        width: 50%;
+        margin: 25px 25%;
+    }
+
+    .banner {
+        display: contents;
+        background-position: center;
+        max-width: 1000px;
         width: 100%;
-        margin: 25px auto;    }
+        margin: 25px auto;
+    }
+
+    /*
+    .slider {
+        width: 1280px;
+        height: auto;
+        margin: 50px auto 0;
+        overflow: hidden;
+
+        animation: slide 16s infinite alternate ease-in-out;
+    }
+
+    .slider ul {
+        display: flex;
+        padding: 0;
+        width: 400%;
+    }
+
+    .slider li {
+        list-style: none;
+        width: 100%;
+    }
+
+    @keyframes slide {
+        0% {
+            margin-left: 0%;
+        }
+
+        20% {
+            margin-left: 0%;
+        }
+
+        25% {
+            margin-left: -100%;
+        }
+
+        45% {
+            margin-left: -100%;
+        }
+
+        50% {
+            margin-left: -200%;
+        }
+
+        70% {
+            margin-left: -200%;
+        }
+
+        75% {
+            margin-left: -300%;
+        }
+
+        95% {
+            margin-left: -300%;
+        }
+    }*/
+
+
 
     h1 {
         font-weight: 100;
@@ -88,7 +158,9 @@
         color: white;
     }
 
-    header h1, h2, h3 {
+    header h1,
+    h2,
+    h3 {
         margin: 0;
         font-family: "Playwrite GB S", serif;
     }
@@ -114,10 +186,9 @@
     }
 
     main {
-        display: flex;
-        flex-wrap: wrap;
-        padding: 0 1rem;
-        max-width: 900px;
+        display: grid;
+        padding: 0 auto;
+        max-width: 1280px;
         margin: 0;
     }
 
@@ -141,5 +212,5 @@
         font-size: 0.8rem;
         background-color: #bbb;
     }
-    
+
 }

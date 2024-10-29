@@ -84,8 +84,6 @@ const temples = [
         area: 30659,
         imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/buenos-aires-argentina-temple/buenos-aires-argentina-temple-4088.jpg"
     },
-
-    // Add more temple objects here...
 ];
 
 function createTempleCard(templesToShow) {
