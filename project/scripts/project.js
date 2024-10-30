@@ -1,9 +1,20 @@
+document.addEventListener("DOMContentLoaded", () => {
 const mainnav = document.querySelector('.navigation')
 const hambutton = document.querySelector('#menu');
 
-hambutton.addEventListener('click', () => {
+    hambutton.addEventListener('click', (event) => {
     mainnav.classList.toggle('show');
     hambutton.classList.toggle('show');
+    });
+
+    const category = document.querySelector('.category')
+    const categorynav = document.querySelector('#categorynav');
+
+    categorynav.addEventListener('click', (event) => {
+        category.classList.toggle('show');
+        categorynav.classList.toggle('show');
+    });
+
 });
 
 const products = [
@@ -80,7 +91,7 @@ function createProducts(productToShow) {
         let img = document.createElement("img");
 
         name.textContent = products.productName;
-        category.innerHTML = `<span class="label">Category:</span> ${products.category}`;
+        category.innerHTML = `<span class="figcaption"></span> ${products.category}`;
         img.setAttribute("src", products.image);
         img.setAttribute("alt", "${products.prductName}");
         img.setAttribute("loading", "lazy");
@@ -94,48 +105,62 @@ function createProducts(productToShow) {
 }
 
 const stuffedlink = document.querySelector("#stuffed");
-const keychainlink = document.querySelector("#keychain");
+const keychainlink = document.querySelector("#keyChain");
 const plushlink = document.querySelector("#plush");
 const boardlink = document.querySelector("#board");
 const grilllink = document.querySelector("#grill");
-/*
-stuffedlink.addEventListener("click", () => {
-    const filteredStuffed = products.filter(product => products.category.includes("Stuffed"))
 
+
+document.addEventListener("DOMContentLoaded", () => {
+    const stuffedlink = document.getElementById("stuffed");
+    if (stuffedlink) {
+stuffedlink.addEventListener("click", () => {
+            const filteredStuffed = products.filter(product => product.category.includes("Stuffed"));
     createProducts(filteredStuffed);
 });
+    } else {
+        console.error("No se encontró el elemento con ID 'stuffedlink'");
+    }
 
-newlink.addEventListener("click", () => {
-    const filteredNewTemples = temples.filter(temple => {
-        const dedicatedYear = parseInt(temple.dedicated.split(",")[0]);
-        return dedicatedYear > 2000;
+    const keychainlink = document.getElementById("keyChain");
+    if (keychainlink) {
+        keychainlink.addEventListener("click", () => {
+            const filteredKeyChain = products.filter(product => product.category.includes("Key Chain"));
+            createProducts(filteredKeyChain);
     });
+    } else {
+        console.error("No se encontró el elemento con ID 'keychainlink'");
+    }
 
-    createTempleCard(filteredNewTemples);
-});
-
-largelink.addEventListener("click", () => {
-    const largeTemples = temples.filter(temples => {
-        tArea = temples.area;
-        return tArea > 90000;
+    const plushlink = document.getElementById("plush");
+    if (plushlink) {
+        plushlink.addEventListener("click", () => {
+            const filteredPlush = products.filter(product => product.category.includes("Plush"));
+            createProducts(filteredPlush);
     });
+    } else {
+        console.error("No se encontró el elemento con ID 'plushlink'");
+    }
 
-    createTempleCard(largeTemples);
-});
-
-smalllink.addEventListener("click", () => {
-    const smallTemples = temples.filter(temples => {
-        tArea = temples.area;
-        return tArea < 10000;
+    const boardlink = document.getElementById("board");
+    if (boardlink) {
+        boardlink.addEventListener("click", () => {
+            const filteredBoard = products.filter(product => product.category.includes("Board"));
+            createProducts(filteredBoard);
     });
+    } else {
+        console.error("No se encontró el elemento con ID 'boardlink'");
+    }
 
-    createTempleCard(smallTemples);
-});
-
-homelink.addEventListener("click", () => {
-    const homeTemples = temples.filter(temples => {
-        tHome = temples.templeName;
-        return tHome !== "";
+    const grilllink = document.getElementById("grill");
+    if (grilllink) {
+        grilllink.addEventListener("click", () => {
+            const filteredGrill = products.filter(product => product.category.includes("Grill"));
+            createProducts(filteredGrill);
+        });
+    } else {
+        console.error("No se encontró el elemento con ID 'grilllink'");
+    }
     });
 
 function displayCopyright() {
