@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-const mainnav = document.querySelector('.navigation')
-const hambutton = document.querySelector('#menu');
+    const mainnav = document.querySelector('.navigation')
+    const hambutton = document.querySelector('#menu');
 
     hambutton.addEventListener('click', (event) => {
-    mainnav.classList.toggle('show');
-    hambutton.classList.toggle('show');
+        mainnav.classList.toggle('show');
+        hambutton.classList.toggle('show');
     });
 
     const category = document.querySelector('.category')
@@ -114,10 +114,10 @@ const grilllink = document.querySelector("#grill");
 document.addEventListener("DOMContentLoaded", () => {
     const stuffedlink = document.getElementById("stuffed");
     if (stuffedlink) {
-stuffedlink.addEventListener("click", () => {
+        stuffedlink.addEventListener("click", () => {
             const filteredStuffed = products.filter(product => product.category.includes("Stuffed"));
-    createProducts(filteredStuffed);
-});
+            createProducts(filteredStuffed);
+        });
     } else {
         console.error("No se encontró el elemento con ID 'stuffedlink'");
     }
@@ -127,7 +127,7 @@ stuffedlink.addEventListener("click", () => {
         keychainlink.addEventListener("click", () => {
             const filteredKeyChain = products.filter(product => product.category.includes("Key Chain"));
             createProducts(filteredKeyChain);
-    });
+        });
     } else {
         console.error("No se encontró el elemento con ID 'keychainlink'");
     }
@@ -137,7 +137,7 @@ stuffedlink.addEventListener("click", () => {
         plushlink.addEventListener("click", () => {
             const filteredPlush = products.filter(product => product.category.includes("Plush"));
             createProducts(filteredPlush);
-    });
+        });
     } else {
         console.error("No se encontró el elemento con ID 'plushlink'");
     }
@@ -147,7 +147,7 @@ stuffedlink.addEventListener("click", () => {
         boardlink.addEventListener("click", () => {
             const filteredBoard = products.filter(product => product.category.includes("Board"));
             createProducts(filteredBoard);
-    });
+        });
     } else {
         console.error("No se encontró el elemento con ID 'boardlink'");
     }
@@ -161,7 +161,7 @@ stuffedlink.addEventListener("click", () => {
     } else {
         console.error("No se encontró el elemento con ID 'grilllink'");
     }
-    });
+});
 
 function displayCopyright() {
     const currentYear = new Date().getFullYear();
