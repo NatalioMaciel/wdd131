@@ -14,11 +14,11 @@
         rel="stylesheet">
     <link rel="stylesheet" href="styles/project.css">
     <link rel="stylesheet" href="styles/project-large.css">
-    <script  src="scripts/project.js" defer></script>
+    <script src="scripts/project.js" defer></script>
 </head>
 
 <body>
-    <header class="header">
+    <header>
         <img src="images/goodarte_logo.webp" alt="good arte logo">
         <h1>Good Arte</h1>
         <a id="menu" href="#"></a>
@@ -27,15 +27,15 @@
                 <li><a id="home" href="goodarte.html">Home</a></li>
                 <li><a id="product" href="products.html">Products</a></li>
                 <li><a id="order" href="#">Order</a></li>
-                <li><a id="contactus" href="contactUs.html">Contact Us</a></li>
+                <li><a id="contactus" href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <picture class="banner">
-            <source srcset="images/banner4.webp" media="(min-width: 700px)">
-            <source srcset="images/banner1.webp" media="(max-width: 699px)">
-            <img src="images/banner1.webp" alt="hero image">
+            <source srcset="images/banner4.webp" media="(min-width: 800px)">
+            <source srcset="images/banner2.webp" media="(min-width: 600px)">
+            <img src="images/banner1.webp" width="500" alt="hero image">
         </picture>
 
         <form action="" class="search_input">
@@ -51,6 +51,17 @@
     <footer>
         <p id="copyright"></p>
         <p id="last-modified"></p>
+        <div>
+            <a href="https://facebook.com" target="_blank">
+                <img class="footer__img" src="images/facebook.png" alt="facebook" width="50">
+            </a>
+            <a href="https://twitter.com" target="_blank">
+                <img class="footer__img" src="images/twitter.png" alt="twitter" width="50">
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+                <img class="footer__img" src="images/instagram.png" alt="instagram" width="50">
+            </a>
+        </div>
     </footer>
 </body>
 

@@ -17,8 +17,9 @@ body {
     font-family: "Sniglet", serif;
     display: flex;
     flex-direction: column;
-    max-width: 699px;
-    margin: 0 auto;
+    align-items: center;
+    max-width: 799px;
+    margin: 0;
     padding: 1px;
     color: var(--text-color);
 }
@@ -28,7 +29,7 @@ body {
 #menu {
     display: block;
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 599px;
     text-decoration: none;
     padding: .5rem .75rem;
     background-color: #eee;
@@ -124,6 +125,10 @@ footer {
     font-family: "Playwrite GB S", serif;
 }
 
+footer img {
+    width: 30px;
+}
+
 /*--------Classes---------*/
 
 .navigation a {
@@ -210,4 +215,62 @@ footer {
     object-fit: cover;
     top: 0;
     left: 0;
+}
+
+/*------Form------*/
+
+.contactf fieldset{
+    margin: 2rem 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: .5rem 2%;
+    width: 410px;
+}
+
+.contactf legend {
+    color: #445ba9;
+    padding: 0 .5rem;
+}
+
+.contactf label {
+    padding-top: 1rem;
+    display: block;
+    color: #3581B8;
+    font-size: .9rem;
+}
+
+.contactf input[type="text"],
+.contactf input[type="tel"],
+.contactf input[type="email"]
+{
+    background-color: #eee;
+    display: block;
+    border: 1px solid #999;
+    border-radius: 6px;
+    padding: .75rem;
+    color: #555;
+    width: 93%;
+    max-width: 400px;
+}
+
+.contactf input[type="checkbox"]{
+    margin-right: 6px;
+    
+}
+.contactf textarea {
+    width: 400px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.contactf input[type="submit"]{
+    border: none;
+    background-image: linear-gradient(#352d29, #3581B8);
+    color: #fff;
+    border-radius: 6px;
+    padding: .8rem;
+    width: 96%;
+    max-width: 400px;
+    margin: -1rem 2% 2rem 2%;
+    box-shadow: 1px 1px 4px #999;
 }
