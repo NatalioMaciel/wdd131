@@ -80,6 +80,21 @@ const products = [
     },
 ];
 
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById('search');
+
+    searchInput.addEventListener('input', function () {
+        const filter = searchInput.value.toLowerCase();
+        const filteredProducts = products.filter(product =>
+            product.productName.toLowerCase().includes(filter)
+        );
+        createProducts(filteredProducts);
+    });
+
+    // Muestra todos los productos inicialmente
+    createProducts(products);
+});
+
 function createProducts(productToShow) {
     const productGrid = document.querySelector(".products-grid");
     productGrid.innerHTML = "";
@@ -89,27 +104,24 @@ function createProducts(productToShow) {
         let name = document.createElement("h3");
         let category = document.createElement("p");
         let img = document.createElement("img");
+        let button = document.createElement("button");
 
         name.textContent = products.productName;
         category.innerHTML = `<span class="figcaption"></span> ${products.category}`;
         img.setAttribute("src", products.image);
-        img.setAttribute("alt", "${products.prductName}");
+        img.setAttribute("alt", `${products.productName}`);
         img.setAttribute("loading", "lazy");
+        button.textContent = "Order it now";
+        button.className = "select-button";
 
         card.appendChild(name);
         card.appendChild(category);
         card.appendChild(img);
+        card.appendChild(button);
 
         productGrid.appendChild(card);
     });
 }
-
-const stuffedlink = document.querySelector("#stuffed");
-const keychainlink = document.querySelector("#keyChain");
-const plushlink = document.querySelector("#plush");
-const boardlink = document.querySelector("#board");
-const grilllink = document.querySelector("#grill");
-
 
 document.addEventListener("DOMContentLoaded", () => {
     const stuffedlink = document.getElementById("stuffed");
@@ -163,31 +175,54 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-const searchInput = document.getElementById('search');
-const productContainer = document.getElementById('productContainer');
+document.addEventListener("DOMContentLoaded", () => {
 
-searchInput.addEventListener('keyup', function (event) {
-    if (event.key === 'Enter') {
-        const filter = searchInput.value.toLowerCase();
-        const filteredProducts = products.filter(product =>
-            product.productName.toLowerCase().includes(filter)
-        );
+    
+    const buyButton = document.querySelector("#select-button");
+    const popup = document.getElementById("popup");
+    const closePopup = document.getElementById("closePopup");
+    const orderForm = document.getElementById("orderForm");
+    const message = document.getElementById("message");
+    
+    
+    buyButton.addEventListener("click", () => {
+        popup.style.display = "block";
+    });
+    
+    closePopup.addEventListener("click", () => {
+        popup.style.display = "none";
+    });
+    
+    orderForm.addEventListener("submit", (event) => {
+        event.preventDefault(); 
+    
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+    
+        message.textContent = `Gracias ${name}, nos contactaremos contigo para verificar los detalles de tu pedido.`;
+        message.style.display = "block";
+    
+        setTimeout(() => {
+            popup.style.display = "none";
+        }, 3000); // 3 segundos
+    });
+    
+
+    function displayCopyright() {
+        const currentYear = new Date().getFullYear();
+        document.getElementById('copyright').textContent = `© ${currentYear} 🎨 Good Arte - Handmade products 🎨 Luque, Paraguay`;
     }
-    createProducts(filteredProducts);
+
+    function displayLastModified() {
+        const lastModified = document.lastModified;
+        document.getElementById('last-modified').textContent = `Last modification: ${lastModified}`;
+    }
+
+    window.onload = () => {
+        createProducts(products);
+        displayCopyright();
+        displayLastModified();
+    };
 });
 
-function displayCopyright() {
-    const currentYear = new Date().getFullYear();
-    document.getElementById('copyright').textContent = `© ${currentYear} 🎨 Good Arte - Handmade products 🎨 Luque, Paraguay`;
-}
 
-function displayLastModified() {
-    const lastModified = document.lastModified;
-    document.getElementById('last-modified').textContent = `Last modification: ${lastModified}`;
-}
-
-window.onload = () => {
-    createProducts(products);
-    displayCopyright();
-    displayLastModified();
-};

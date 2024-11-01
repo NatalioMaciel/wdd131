@@ -19,14 +19,13 @@
 
 <body>
     <header>
-        <img src="images/goodarte_logo.webp" alt="good arte logo">
-        <h1>Good Arte</h1>
+        <a href="goodarte.html"><img src="images/goodarte_logo.webp" alt="good arte logo"></a>
         <a id="menu" href="#"></a>
         <nav class="nav">
             <ul class="navigation">
                 <li><a id="home" href="goodarte.html">Home</a></li>
                 <li><a id="product" href="products.html">Products</a></li>
-                <li><a id="order" href="#">Order</a></li>
+                <li><a id="order" href="order.html">Order</a></li>
                 <li><a id="contactus" href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
@@ -44,6 +43,21 @@
 
         <h2>Products</h2>
         <div id="productContainer" class="products-grid">
+        </div>
+
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span id="closePopup" class="close">&times;</span>
+                <h2>Ingrese sus datos</h2>
+                <form id="orderForm">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" required><br>
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" required><br>
+                    <button type="submit">Enviar</button>
+                </form>
+                <p id="message" style="display: none;"></p>
+            </div>
         </div>
 
     </main>
