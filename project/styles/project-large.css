@@ -68,6 +68,7 @@
     header {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
         width: 100%;
         background-color: var(--header-background);
         padding: 20px;
