@@ -166,21 +166,15 @@ document.addEventListener("DOMContentLoaded", () => {
 const searchInput = document.getElementById('search');
 const productContainer = document.getElementById('productContainer');
 
-searchInput.addEventListener('keyup', function(event) {
-    if (event.key === 'Enter') { 
+searchInput.addEventListener('keyup', function (event) {
+    if (event.key === 'Enter') {
         const filter = searchInput.value.toLowerCase();
-        const filteredProducts = products.filter(product => 
-            product.productName.toLowerCase().includes(filter) || 
-            product.category.toLowerCase().includes(filter)
+        const filteredProducts = products.filter(product =>
+            product.productName.toLowerCase().includes(filter)
         );
-        
-        createProducts(filteredProducts);
     }
+    createProducts(filteredProducts);
 });
-
-
-createProducts(products);
-
 
 function displayCopyright() {
     const currentYear = new Date().getFullYear();
