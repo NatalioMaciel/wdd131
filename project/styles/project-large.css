@@ -214,6 +214,7 @@
     iframe {
         width: 100%;
         height: 100%;
+        max-width: 410px;
         grid-column: 1 / 2;
     }
 
@@ -283,37 +284,19 @@
         box-shadow: 1px 1px 4px #999;
     }
 
-    .popup {
-        display: none; /* Esconde el pop-up por defecto */
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
+    .contactf input:required {
+        border-right: solid 8px red;
     }
-    
-    .popup-content {
-        background-color: white;
-        margin: 15% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 300px;
-        text-align: center;
+
+    .contactf input:required:valid {
+        border-right: solid 8px green;
     }
-    
-    .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
+
+    .thank {
+        font-size: 3rem;
         font-weight: bold;
-    }
-    
-    .close:hover,
-    .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
+        margin: 50px 20%;
+        text-align: center;
     }
 
 }

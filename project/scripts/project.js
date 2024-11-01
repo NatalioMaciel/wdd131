@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+
     const mainnav = document.querySelector('.navigation')
     const hambutton = document.querySelector('#menu');
 
@@ -7,80 +8,69 @@ document.addEventListener("DOMContentLoaded", () => {
         hambutton.classList.toggle('show');
     });
 
-    const category = document.querySelector('.category')
-    const categorynav = document.querySelector('#categorynav');
+    const products = [
+        {
+            productName: "Amigurris Cr7",
+            category: "Stuffed Animals",
+            image: "images/cr7.jpg",
+        },
+        {
+            productName: "Amigurris Spider",
+            category: "Key Chain",
+            image: "images/key_chain_spider.jpg",
+        },
+        {
+            productName: "Amigurris Bear",
+            category: "Key Chain",
+            image: "images/key_chain_bear.jpg",
+        },
+        {
+            productName: "Amigurris Bee",
+            category: "Key Chain",
+            image: "images/key_chain_bee.jpg",
+        },
+        {
+            productName: "Amigurris Tomato",
+            category: "Stuffed Animals",
+            image: "images/small_stuffed.jpg",
+        },
+        {
+            productName: "Amigurris chick",
+            category: "Key Chain",
+            image: "images/key_chain_chick.jpg",
+        },
+        {
+            productName: "Amigurris Unicorn",
+            category: "Stuffed Animals",
+            image: "images/unicorn.jpg",
+        },
+        {
+            productName: "Handmade knife",
+            category: "Grill Kit",
+            image: "images/handmade_knife.jpg",
+        },
+        {
+            productName: "Board Game",
+            category: "Board Game",
+            image: "images/board_games.jpg",
+        },
+        {
+            productName: "Amigurris Cat",
+            category: "Stuffed Animals",
+            image: "images/small_stuffed_2.jpg",
+        },
+        {
+            productName: "Plush Bouquet Flower",
+            category: "Plush Bouquet",
+            image: "images/stuffed_flowers2.jpg",
+        },
+        {
+            productName: "Plush Bouquet Dinasor",
+            category: "Plush Bouquet",
+            image: "images/stuffed_flowers.jpg",
+        },
+    ];
 
-    categorynav.addEventListener('click', (event) => {
-        category.classList.toggle('show');
-        categorynav.classList.toggle('show');
-    });
-
-});
-
-const products = [
-    {
-        productName: "Amigurris Cr7",
-        category: "Stuffed Animals",
-        image: "images/cr7.jpg",
-    },
-    {
-        productName: "Amigurris Spider",
-        category: "Key Chain",
-        image: "images/key_chain_spider.jpg",
-    },
-    {
-        productName: "Amigurris Bear",
-        category: "Key Chain",
-        image: "images/key_chain_bear.jpg",
-    },
-    {
-        productName: "Amigurris Bee",
-        category: "Key Chain",
-        image: "images/key_chain_bee.jpg",
-    },
-    {
-        productName: "Amigurris Tomato",
-        category: "Stuffed Animals",
-        image: "images/small_stuffed.jpg",
-    },
-    {
-        productName: "Amigurris chick",
-        category: "Key Chain",
-        image: "images/key_chain_chick.jpg",
-    },
-    {
-        productName: "Amigurris Unicorn",
-        category: "Stuffed Animals",
-        image: "images/unicorn.jpg",
-    },
-    {
-        productName: "Handmade knife",
-        category: "Grill Kit",
-        image: "images/handmade_knife.jpg",
-    },
-    {
-        productName: "Board Game",
-        category: "Board Game",
-        image: "images/board_games.jpg",
-    },
-    {
-        productName: "Amigurris Cat",
-        category: "Stuffed Animals",
-        image: "images/small_stuffed_2.jpg",
-    },
-    {
-        productName: "Plush Bouquet Flower",
-        category: "Plush Bouquet",
-        image: "images/stuffed_flowers2.jpg",
-    },
-    {
-        productName: "Plush Bouquet Dinasor",
-        category: "Plush Bouquet",
-        image: "images/stuffed_flowers.jpg",
-    },
-];
-
-document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById('search');
 
     searchInput.addEventListener('input', function () {
@@ -91,47 +81,108 @@ document.addEventListener("DOMContentLoaded", function () {
         createProducts(filteredProducts);
     });
 
-    // Muestra todos los productos inicialmente
     createProducts(products);
-});
 
-function createProducts(productToShow) {
-    const productGrid = document.querySelector(".products-grid");
-    productGrid.innerHTML = "";
 
-    productToShow.forEach(products => {
-        let card = document.createElement("section");
-        let name = document.createElement("h3");
-        let category = document.createElement("p");
-        let img = document.createElement("img");
-        let button = document.createElement("button");
+    const popup = document.getElementById("popup");
+    const closePopup = document.getElementById("closePopup");
+    const orderForm = document.getElementById("orderForm");
+    const message = document.getElementById("message");
 
-        name.textContent = products.productName;
-        category.innerHTML = `<span class="figcaption"></span> ${products.category}`;
-        img.setAttribute("src", products.image);
-        img.setAttribute("alt", `${products.productName}`);
-        img.setAttribute("loading", "lazy");
-        button.textContent = "Order it now";
-        button.className = "select-button";
+    function createProducts(productToShow) {
+        const productGrid = document.querySelector(".products-grid");
+        productGrid.innerHTML = "";
 
-        card.appendChild(name);
-        card.appendChild(category);
-        card.appendChild(img);
-        card.appendChild(button);
+        productToShow.forEach(products => {
+            let card = document.createElement("section");
+            let name = document.createElement("h3");
+            let category = document.createElement("p");
+            let img = document.createElement("img");
+            let button = document.createElement("button");
 
-        productGrid.appendChild(card);
+            name.textContent = products.productName;
+            category.innerHTML = `<span class="figcaption"></span> ${products.category}`;
+            img.setAttribute("src", products.image);
+            img.setAttribute("alt", `${products.productName}`);
+            img.setAttribute("loading", "lazy");
+            button.textContent = "Order it now";
+            button.className = "select-button";
+
+            button.addEventListener("click", () => {
+                popup.style.display = "block";
+            });
+
+            card.appendChild(name);
+            card.appendChild(category);
+            card.appendChild(img);
+            card.appendChild(button);
+
+            productGrid.appendChild(card);
+        });
+    }
+
+    /*
+    closePopup.addEventListener("click", () => {
+        popup.style.display = "none";
     });
-}
 
-document.addEventListener("DOMContentLoaded", () => {
+    
+    orderForm.addEventListener("submit", (event) => {
+        event.preventDefault(); 
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+
+        message.textContent = `Gracias ${name}, nos contactaremos contigo para verificar los detalles de tu pedido.`;
+        message.style.display = "block"; 
+
+        setTimeout(() => {
+            popup.style.display = "none"; 
+        }, 3000);
+    });*/
+
+    document.getElementById("ContactForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Evita que se recargue la página
+
+        // Recoger los datos del formulario
+        const fullname = document.getElementById("fullname").value;
+        const phonenumber = document.getElementById("phonenumber").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("msg").value;
+        const newsletter = document.getElementById("newsletter").checked;
+
+        // Crear un objeto con la información
+        const contactInfo = {
+            name: fullname,
+            phone: phonenumber,
+            email: email,
+            message: message,
+            subscribe: newsletter
+        };
+
+        // Recuperar el array existente del localStorage o inicializar uno nuevo
+        const existingContacts = JSON.parse(localStorage.getItem("contacts")) || [];
+
+        // Agregar el nuevo contacto al array
+        existingContacts.push(contactInfo);
+
+        // Guardar el array actualizado en localStorage
+        localStorage.setItem("contacts", JSON.stringify(existingContacts));
+
+        // Mostrar mensaje de agradecimiento
+        document.getElementById("thankYouMessage").style.display = "block";
+
+        // Limpiar el formulario (opcional)
+        this.reset();
+    });
+
+
     const stuffedlink = document.getElementById("stuffed");
     if (stuffedlink) {
         stuffedlink.addEventListener("click", () => {
             const filteredStuffed = products.filter(product => product.category.includes("Stuffed"));
             createProducts(filteredStuffed);
         });
-    } else {
-        console.error("No se encontró el elemento con ID 'stuffedlink'");
     }
 
     const keychainlink = document.getElementById("keyChain");
@@ -140,8 +191,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const filteredKeyChain = products.filter(product => product.category.includes("Key Chain"));
             createProducts(filteredKeyChain);
         });
-    } else {
-        console.error("No se encontró el elemento con ID 'keychainlink'");
     }
 
     const plushlink = document.getElementById("plush");
@@ -150,8 +199,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const filteredPlush = products.filter(product => product.category.includes("Plush"));
             createProducts(filteredPlush);
         });
-    } else {
-        console.error("No se encontró el elemento con ID 'plushlink'");
     }
 
     const boardlink = document.getElementById("board");
@@ -160,8 +207,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const filteredBoard = products.filter(product => product.category.includes("Board"));
             createProducts(filteredBoard);
         });
-    } else {
-        console.error("No se encontró el elemento con ID 'boardlink'");
     }
 
     const grilllink = document.getElementById("grill");
@@ -170,43 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const filteredGrill = products.filter(product => product.category.includes("Grill"));
             createProducts(filteredGrill);
         });
-    } else {
-        console.error("No se encontró el elemento con ID 'grilllink'");
     }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    
-    const buyButton = document.querySelector("#select-button");
-    const popup = document.getElementById("popup");
-    const closePopup = document.getElementById("closePopup");
-    const orderForm = document.getElementById("orderForm");
-    const message = document.getElementById("message");
-    
-    
-    buyButton.addEventListener("click", () => {
-        popup.style.display = "block";
-    });
-    
-    closePopup.addEventListener("click", () => {
-        popup.style.display = "none";
-    });
-    
-    orderForm.addEventListener("submit", (event) => {
-        event.preventDefault(); 
-    
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-    
-        message.textContent = `Gracias ${name}, nos contactaremos contigo para verificar los detalles de tu pedido.`;
-        message.style.display = "block";
-    
-        setTimeout(() => {
-            popup.style.display = "none";
-        }, 3000); // 3 segundos
-    });
-    
 
     function displayCopyright() {
         const currentYear = new Date().getFullYear();

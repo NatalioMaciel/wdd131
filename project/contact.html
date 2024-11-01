@@ -46,14 +46,14 @@
             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-        <form method="get" class="contactf" id="ContactForm">
+        <form method="get" action="thank.html" class="contactf" id="ContactForm">
             <fieldset>
                 <Legend>Contact Us</Legend>
                 <p>We are here to answer your questions!</p>
-                <label>name<input type="text" id="fullname" name="name" placeholder="Name"></label>
-                <label>Phone<input type="tel" id="phonenumber" name="phone" placeholder="09XX XXX XXX"></label>
-                <label>Phone<input type="email" id="email" name="email" placeholder="example@mymail.com"></label>
-                <label>Message</label>
+                <label>name<input type="text" id="fullname" name="name" placeholder="Name" required></label>
+                <label>Phone<input type="tel" id="phonenumber" name="phone" placeholder="09XX XXX XXX" required></label>
+                <label>Email (opcional)<input type="email" id="email" name="email" placeholder="example@mymail.com"></label>
+                <label>Message (opcional)</label>
                 <textarea name="massage" id="msg"></textarea>
 
                 <label><input type="checkbox" id="newsletter" name="news" value="yes">Subscribe to Ours
@@ -62,6 +62,9 @@
 
             <input type="submit" value="Rating the product">
         </form>
+
+        <div id="thankYouMessage" style="display: none;">Gracias por contactarnos. Nos pondremos en contacto contigo pronto.</div>
+
     </main>
     <footer>
         <p id="copyright"></p>

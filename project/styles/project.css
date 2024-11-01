@@ -330,3 +330,18 @@ iframe {
     margin: 10px auto;
     box-shadow: 1px 1px 4px #999;
 }
+
+.contactf input:required {
+    border-right: solid 8px red;
+}
+
+.contactf input:required:valid {
+    border-right: solid 8px green;
+}
+
+.thank {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 50px 20%;
+    text-align: center;
+}
