@@ -12,6 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentPage === "products") {
         setupProductPage();
     }
+
+    if (currentPage === "thank") {
+        setupThankPage();
+    }
 });
 function setupHomePage() {
 
@@ -21,14 +25,6 @@ function setupHomePage() {
     hambutton.addEventListener('click', (event) => {
         mainnav.classList.toggle('show');
         hambutton.classList.toggle('show');
-    });
-
-    const category = document.querySelector('.category')
-    const categorynav = document.querySelector('#categorynav');
-
-    hambutton.addEventListener('click', (event) => {
-        category.classList.toggle('show');
-        categorynav.classList.toggle('show');
     });
 
     const products = [
@@ -137,13 +133,11 @@ function setupHomePage() {
     function displayCopyright() {
         const currentYear = new Date().getFullYear();
         document.getElementById('copyright').textContent = `© ${currentYear} 🎨 Good Arte - Handmade products 🎨 Luque, Paraguay`;
-        console.log("Copyright displayed");  // Agrega este log
     }
 
     function displayLastModified() {
         const lastModified = document.lastModified;
         document.getElementById('last-modified').textContent = `Last modification: ${lastModified}`;
-        console.log("Last modified displayed");  // Agrega este log
     }
 
     displayCopyright();
@@ -153,6 +147,16 @@ function setupHomePage() {
 
 
 function setupContactForm() {
+    const mainnav = document.querySelector('.navigation')
+    const hambutton = document.querySelector('#menu');
+
+    hambutton.addEventListener('click', (event) => {
+        mainnav.classList.toggle('show');
+        hambutton.classList.toggle('show');
+    });
+
+    const contactForm = document.getElementById("ContactForm");
+
     contactForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
@@ -173,20 +177,20 @@ function setupContactForm() {
         const existingContacts = JSON.parse(localStorage.getItem("contacts")) || [];
         existingContacts.push(contactInfo);
         localStorage.setItem("contacts", JSON.stringify(existingContacts));
+        document.getElementById("thankYouMessage").style.display = "block";
 
-        alert("Gracias por contactarnos. Nos pondremos en contacto contigo pronto.");
+        alert("Thank you for contacting us. We will get back to you shortly.");
+
     });
 
     function displayCopyright() {
         const currentYear = new Date().getFullYear();
         document.getElementById('copyright').textContent = `© ${currentYear} 🎨 Good Arte - Handmade products 🎨 Luque, Paraguay`;
-        console.log("Copyright displayed");  // Agrega este log
     }
 
     function displayLastModified() {
         const lastModified = document.lastModified;
         document.getElementById('last-modified').textContent = `Last modification: ${lastModified}`;
-        console.log("Last modified displayed");  // Agrega este log
     }
 
     displayCopyright();
@@ -194,6 +198,22 @@ function setupContactForm() {
 }
 
 function setupProductPage() {
+
+    const mainnav = document.querySelector('.navigation')
+    const hambutton = document.querySelector('#menu');
+
+    hambutton.addEventListener('click', (event) => {
+        mainnav.classList.toggle('show');
+        hambutton.classList.toggle('show');
+    });
+
+    const category = document.querySelector('.category')
+    const categorynav = document.querySelector('#categorynav');
+
+    hambutton.addEventListener('click', (event) => {
+        category.classList.toggle('show');
+        categorynav.classList.toggle('show');
+    });
 
     const products = [
         {
@@ -340,15 +360,36 @@ function setupProductPage() {
     function displayCopyright() {
         const currentYear = new Date().getFullYear();
         document.getElementById('copyright').textContent = `© ${currentYear} 🎨 Good Arte - Handmade products 🎨 Luque, Paraguay`;
-        console.log("Copyright displayed");  // Agrega este log
     }
 
     function displayLastModified() {
         const lastModified = document.lastModified;
         document.getElementById('last-modified').textContent = `Last modification: ${lastModified}`;
-        console.log("Last modified displayed");  // Agrega este log
     }
 
     displayCopyright();
     displayLastModified();
 }
+
+function setupThankPage() {
+    const mainnav = document.querySelector('.navigation')
+    const hambutton = document.querySelector('#menu');
+
+    hambutton.addEventListener('click', (event) => {
+        mainnav.classList.toggle('show');
+        hambutton.classList.toggle('show');
+    });
+
+    function displayCopyright() {
+        const currentYear = new Date().getFullYear();
+        document.getElementById('copyright').textContent = `© ${currentYear} 🎨 Good Arte - Handmade products 🎨 Luque, Paraguay`;
+    }
+
+    function displayLastModified() {
+        const lastModified = document.lastModified;
+        document.getElementById('last-modified').textContent = `Last modification: ${lastModified}`;
+    }
+
+    displayCopyright();
+    displayLastModified();
+};
