@@ -1,5 +1,31 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    document.addEventListener("DOMContentLoaded", () => {
+        const currentPage = window.location.pathname;
+
+        if (currentPage.includes("goodarte.html")) {
+            setupHomePage();
+        }
+
+        if (currentPage.includes("contact.html")) {
+            setupContactForm();
+        }
+
+        if (currentPage.includes("products.html")) {
+            setupProductPage();
+        }
+
+        if (currentPage.includes("thank.html")) {
+            setupProductPage();
+        }
+    });
+
+    function setupContactForm() {
+        const contactForm = document.getElementById("ContactForm");
+        if (contactForm) {
+
+        }
+    };
     const mainnav = document.querySelector('.navigation')
     const hambutton = document.querySelector('#menu');
 
@@ -83,12 +109,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     createProducts(products);
 
-
-    const popup = document.getElementById("popup");
-    const closePopup = document.getElementById("closePopup");
-    const orderForm = document.getElementById("orderForm");
-    const message = document.getElementById("message");
-
     function createProducts(productToShow) {
         const productGrid = document.querySelector(".products-grid");
         productGrid.innerHTML = "";
@@ -108,10 +128,6 @@ document.addEventListener("DOMContentLoaded", () => {
             button.textContent = "Order it now";
             button.className = "select-button";
 
-            button.addEventListener("click", () => {
-                popup.style.display = "block";
-            });
-
             card.appendChild(name);
             card.appendChild(category);
             card.appendChild(img);
@@ -121,37 +137,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /*
-    closePopup.addEventListener("click", () => {
-        popup.style.display = "none";
-    });
-
-    
-    orderForm.addEventListener("submit", (event) => {
-        event.preventDefault(); 
-
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-
-        message.textContent = `Gracias ${name}, nos contactaremos contigo para verificar los detalles de tu pedido.`;
-        message.style.display = "block"; 
-
-        setTimeout(() => {
-            popup.style.display = "none"; 
-        }, 3000);
-    });*/
-
     document.getElementById("ContactForm").addEventListener("submit", function (event) {
-        event.preventDefault(); // Evita que se recargue la página
+        event.preventDefault();
 
-        // Recoger los datos del formulario
         const fullname = document.getElementById("fullname").value;
         const phonenumber = document.getElementById("phonenumber").value;
         const email = document.getElementById("email").value;
         const message = document.getElementById("msg").value;
         const newsletter = document.getElementById("newsletter").checked;
 
-        // Crear un objeto con la información
         const contactInfo = {
             name: fullname,
             phone: phonenumber,
@@ -160,20 +154,11 @@ document.addEventListener("DOMContentLoaded", () => {
             subscribe: newsletter
         };
 
-        // Recuperar el array existente del localStorage o inicializar uno nuevo
         const existingContacts = JSON.parse(localStorage.getItem("contacts")) || [];
 
-        // Agregar el nuevo contacto al array
         existingContacts.push(contactInfo);
 
-        // Guardar el array actualizado en localStorage
         localStorage.setItem("contacts", JSON.stringify(existingContacts));
-
-        // Mostrar mensaje de agradecimiento
-        document.getElementById("thankYouMessage").style.display = "block";
-
-        // Limpiar el formulario (opcional)
-        this.reset();
     });
 
 
@@ -220,11 +205,13 @@ document.addEventListener("DOMContentLoaded", () => {
     function displayCopyright() {
         const currentYear = new Date().getFullYear();
         document.getElementById('copyright').textContent = `© ${currentYear} 🎨 Good Arte - Handmade products 🎨 Luque, Paraguay`;
+        console.log("Copyright displayed");  // Agrega este log
     }
 
     function displayLastModified() {
         const lastModified = document.lastModified;
         document.getElementById('last-modified').textContent = `Last modification: ${lastModified}`;
+        console.log("Last modified displayed");  // Agrega este log
     }
 
     window.onload = () => {
